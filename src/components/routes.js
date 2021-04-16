@@ -2,7 +2,8 @@
 import Auth from "./pages/auth/auth";
 import Home from "./pages/home/home";
 import Articles from "./pages/articles/articles";
-import SingleArticle from "./pages/single-article/articles";
+import SingleArticle from "./pages/single-article/single-article";
+import Cabinet from "./pages/cabinet/cabinet";
 
 export const privateRoutes = [
     {
@@ -16,6 +17,10 @@ export const privateRoutes = [
     {
         path: '/articles:id',
         component: SingleArticle
+    },
+    {
+        path: '/cabinet',
+        component: Cabinet
     }
 ];
 

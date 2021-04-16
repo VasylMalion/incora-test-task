@@ -6,7 +6,7 @@ import {useHistory} from "react-router-dom";
 
 // styles
 import "./home.css";
-import {Button, Card, Col, Container, Row} from "react-bootstrap";
+import {Button, Card, Col, Container, Row, Spinner} from "react-bootstrap";
 
 // actions
 import {addFeed, fetchedFeeds, removeFeed, setCurrentFeed} from "../../../redux/actions/feedsActions";
@@ -43,7 +43,7 @@ const Home = ({fetchedFeeds, feeds, removeFeed, addFeed, setCurrentFeed}) => {
     }
 
     const toArticles = (payload) => {
-        setCurrentFeed(payload)
+        setCurrentFeed(payload);
         history.push("/articles");
     }
 
@@ -62,6 +62,12 @@ const Home = ({fetchedFeeds, feeds, removeFeed, addFeed, setCurrentFeed}) => {
         <br />
     </Col>) : null
 
+    if (!feeds.length) {
+        return <div className="d-flex justify-content-center mt-5">
+            <Spinner animation="grow"/>
+        </div>
+    }
+
     return <Container className="mb-5">
         <Row>
             {feedsHTML}
@@ -76,7 +82,7 @@ const Home = ({fetchedFeeds, feeds, removeFeed, addFeed, setCurrentFeed}) => {
             setTitle={setTitle}
             description={description}
             setDescription={setDescription}
-            addNewFeed={addNewFeed}
+            action={addNewFeed}
         />
     </Container>
 }

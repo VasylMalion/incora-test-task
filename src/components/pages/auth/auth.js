@@ -18,15 +18,15 @@ const Auth = ({fetchedUser, isAuth, error}) => {
     let history = useHistory();
 
     const signIn = async () => {
-        fetchedUser({username, password})
+        fetchedUser({username, password});
     }
 
     useEffect(() => {
-        isAuth && history.push('/')
+        isAuth && history.push('/');
     }, [isAuth])
 
     useEffect(() => {
-        error && alert("The data do not match")
+        error && alert("The data do not match");
     }, [error])
 
     return <>

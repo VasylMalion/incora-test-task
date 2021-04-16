@@ -15,7 +15,7 @@ const SingleArticle = ({currentFeed, feeds, currentArticle}) => {
             <Card.Header className="text-center" as="h5">{article.title}</Card.Header>
             <Card.Body>
                 <Card.Text>
-                    {article.description}
+                    <span dangerouslySetInnerHTML={{ __html: article.description }} />
                 </Card.Text>
                 <div className="text-right"> Created at: {article.pubDate} </div>
             </Card.Body>

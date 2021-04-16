@@ -4,7 +4,7 @@ import React from "react";
 // styles
 import {Button, Col, Modal} from "react-bootstrap";
 
-export const CustomModal = ({show, handleClose, title, setTitle, description, setDescription, addNewFeed}) => {
+export const CustomModal = ({show, handleClose, title, setTitle, description, setDescription, action}) => {
 
     return <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -34,7 +34,7 @@ export const CustomModal = ({show, handleClose, title, setTitle, description, se
             <Button variant="secondary" onClick={handleClose}>
                 Close
             </Button>
-            <Button variant="primary" onClick={addNewFeed}>
+            <Button variant="primary" onClick={action}>
                 Save Changes
             </Button>
         </Modal.Footer>

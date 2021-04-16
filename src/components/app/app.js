@@ -11,6 +11,7 @@ import Header from "../header/header";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container} from "react-bootstrap";
 
+// routes
 import {privateRoutes, publicRoutes} from "../routes";
 
 const App = ({isAuth}) => {
@@ -47,7 +48,6 @@ const App = ({isAuth}) => {
 }
 
 const mapStateToProps = state => {
-
     return {
         isAuth: state.user.isAuth
     }
